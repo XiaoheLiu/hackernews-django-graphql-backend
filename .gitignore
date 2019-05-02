@@ -1,5 +1,8 @@
-### VS Code Settings
+### VS Code Settings ###
 .vscode/
+
+### Virtual Env ###
+.venv/
 
 ### OSX ###
 .DS_Store
