@@ -1,0 +1,70 @@
+query ALL_LINKS {
+  links {
+    description
+    url
+    id
+  }
+}
+
+query SINGLE_LINK {
+  link(id: 1) {
+    url
+    description
+    id
+  }
+}
+
+mutation CREATE_LINK {
+  createLink(
+    url: "https://athenaliu.space/"
+    description: "my personal portfolio"
+  ) {
+    id
+    description
+    url
+  }
+}
+
+mutation CREAT_USER {
+  createUser(
+    username: "testuser"
+    email: "test@gmail.com"
+    password: "testing"
+  ) {
+    user {
+      username
+      dateJoined
+      email
+      password
+    }
+  }
+}
+
+query ALL_USERS {
+  users {
+    id
+    username
+    email
+  }
+}
+
+mutation GET_TOKEN {
+  tokenAuth(username: "testuser", password: "testing") {
+    token
+  }
+}
+
+mutation VERIFY_TOKEN {
+  verifyToken(
+    token: "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VybmFtZSI6InRlc3R1c2VyIiwiZXhwIjoxNTU3MTgxNDc5LCJvcmlnSWF0IjoxNTU3MTgxMTc5fQ._YUnNPiARR2otXWHGvX_W5JAhMboH73k8keA2dmHDM0"
+  ) {
+    payload
+  }
+}
+
+query ME {
+  me {
+    id
+    username
+  }
+}
