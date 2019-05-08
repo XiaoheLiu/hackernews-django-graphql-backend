@@ -3,6 +3,9 @@ query ALL_LINKS {
     description
     url
     id
+    votes {
+      id
+    }
   }
 }
 
@@ -22,6 +25,11 @@ mutation CREATE_LINK {
     id
     description
     url
+    postedBy {
+      id
+      username
+      email
+    }
   }
 }
 
@@ -66,5 +74,30 @@ query ME {
   me {
     id
     username
+  }
+}
+
+mutation CREATE_VOTE {
+  createVote(linkId: 1) {
+    user {
+      username
+    }
+    link {
+      url
+      description
+    }
+  }
+}
+
+query ALL_VOTES {
+  votes {
+    id
+    user {
+      username
+    }
+    link {
+      url
+      description
+    }
   }
 }
