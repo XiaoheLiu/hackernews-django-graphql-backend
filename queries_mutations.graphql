@@ -9,6 +9,17 @@ query ALL_LINKS {
   }
 }
 
+query FILTERED_LINKS {
+  links(search: "athena") {
+    description
+    url
+    id
+    votes {
+      id
+    }
+  }
+}
+
 query SINGLE_LINK {
   link(id: 1) {
     url
