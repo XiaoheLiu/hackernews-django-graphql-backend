@@ -112,3 +112,55 @@ query ALL_VOTES {
     }
   }
 }
+
+query RELAY_QUERY {
+  relayLinks {
+    edges {
+      node {
+        id
+        url
+        description
+        votes {
+          edges {
+            node {
+              id
+              user {
+                id
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+query RELAY_PAGINATION {
+  relayLinks(first: 1) {
+    edges {
+      node {
+        id
+        url
+      }
+    }
+    pageInfo {
+      startCursor
+      endCursor
+    }
+  }
+}
+
+mutation RELAY_CREATE_LINK {
+  relayCreateLink(
+    input: {
+      url: "http://athena-liu.netlify.com"
+      description: "Mirror of my personal website."
+    }
+  ) {
+    link {
+      id
+      url
+      description
+    }
+  }
+}
