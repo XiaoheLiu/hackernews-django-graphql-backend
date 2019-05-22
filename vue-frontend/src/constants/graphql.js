@@ -1,11 +1,11 @@
-import gql from 'graphql-tag'
+import gql from "graphql-tag";
 
 export const ALL_LINKS_QUERY = gql`
-  query ALL_LINKS_QUERY {
+  query AllLinksQuery {
     links {
       id
       url
       description
     }
   }
-`
+`;

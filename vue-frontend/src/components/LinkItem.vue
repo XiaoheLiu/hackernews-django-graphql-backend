@@ -1,5 +1,5 @@
 <template>
-  <div>{{link.description}} ({{link.url}})</div>
+  <div>{{ link.description }} ({{ link.url }})</div>
 </template>
 
 <script>

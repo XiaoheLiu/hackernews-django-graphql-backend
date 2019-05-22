@@ -13,7 +13,7 @@ export default {
   name: "LinkList",
   data() {
     return {
-      allLinks: [],
+      links: [],
       loading: 0
     };
   },
