@@ -7,6 +7,8 @@ import { HttpLink } from "apollo-link-http";
 import { InMemoryCache } from "apollo-cache-inmemory";
 import VueApollo from "vue-apollo";
 
+import router from './router'
+
 Vue.config.productionTip = false;
 
 const httpLink = new HttpLink({
@@ -32,5 +34,6 @@ const apolloProvider = new VueApollo({
 new Vue({
   el: "#app",
   apolloProvider: apolloProvider,
+  router,
   render: h => h(App)
 });
